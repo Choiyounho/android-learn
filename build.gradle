@@ -1,11 +1,11 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext.kotlin_version = "1.4.10"
-    repositories {
+    repositories { // 라이브러리를 사용할 때 참고할 레퍼지토리
         google()
         jcenter()
     }
-    dependencies {
+    dependencies { // 외부 api 사용
         classpath "com.android.tools.build:gradle:4.1.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
