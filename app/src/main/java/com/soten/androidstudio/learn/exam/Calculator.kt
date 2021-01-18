@@ -1,8 +1,9 @@
-package com.soten.androidstudio.learn
+package com.soten.androidstudio.learn.exam
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.soten.androidstudio.learn.R
 
 class Calculator : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
