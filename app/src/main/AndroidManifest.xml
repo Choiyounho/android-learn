@@ -11,13 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Learn">
-        <activity android:name=".AddViewActivity">
+        <activity android:name=".exam.PhoneBookDetailActivity"></activity>
+        <activity android:name=".exam.PhoneBookActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AddViewActivity" />
         <activity android:name=".LibraryActivity" />
         <activity android:name=".ThreadActivity" />
         <activity android:name=".FragmentActivity" />

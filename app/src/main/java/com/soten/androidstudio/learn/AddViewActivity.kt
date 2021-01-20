@@ -27,6 +27,10 @@ class AddViewActivity : AppCompatActivity() {
             carEngineView.text = carList[i].engine
             container.addView(itemView)
         }
+
+        container.setOnClickListener {
+
+        }
     }
 }
 
