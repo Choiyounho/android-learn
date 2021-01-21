@@ -20,11 +20,9 @@ class TabPagerActivity : AppCompatActivity() {
         tabLayout.addTab(tabLayout.newTab().setText("TWO"))
         tabLayout.addTab(tabLayout.newTab().setText("THREE"))
 
-//        val pagerAdapter = PagerAdapter(supportFragmentManager, 3)
-
         val viewPager: ViewPager = findViewById(R.id.view_pager)
 
-        viewPager.adapter = PagerAdapter(supportFragmentManager, 3)
+        viewPager.adapter = FragmentPagerAdapter(supportFragmentManager, 3)
 
         tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
@@ -32,13 +30,10 @@ class TabPagerActivity : AppCompatActivity() {
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
-
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {
-
             }
-
         })
         viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
         // -> 페이져가 이동했을 때 탭을 이동시키는 코드
@@ -46,7 +41,7 @@ class TabPagerActivity : AppCompatActivity() {
 
 }
 
-class PagerAdapter(fragmentManager: FragmentManager, val tabCount: Int) :
+class FragmentPagerAdapter(fragmentManager: FragmentManager, val tabCount: Int) :
     FragmentStatePagerAdapter(fragmentManager) {
 
     override fun getItem(position: Int): Fragment {
