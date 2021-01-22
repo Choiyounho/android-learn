@@ -3,6 +3,12 @@ plugins { // 라이브러리를 플러그인 하여 기능을 사용
     id 'kotlin-android'
 }
 
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'realm-android'
+
 android {
     compileSdkVersion 30     // 기계어로 바꿔주는 컴파일러의 버전
     buildToolsVersion "30.0.2" // 안드로이드 버전
