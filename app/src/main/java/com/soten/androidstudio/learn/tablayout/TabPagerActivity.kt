@@ -65,7 +65,4 @@ class FragmentPagerAdapter(fragmentManager: FragmentManager, val tabCount: Int) 
         return tabCount
     }
 
-
 }
-
-

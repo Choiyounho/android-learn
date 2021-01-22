@@ -26,9 +26,8 @@ class RecyclerViewActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this@RecyclerViewActivity)
 //        recyclerView.layoutManager = GridLayoutManager(this@RecyclerViewActivity, 2)
-
-
     }
+
 }
 
 class RecyclerViewAdapter(val itemList: ArrayList<CarForList>,
