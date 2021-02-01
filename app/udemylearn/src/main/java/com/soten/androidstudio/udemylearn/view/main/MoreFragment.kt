@@ -7,19 +7,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.soten.androidstudio.udemylearn.R
 import kotlinx.android.synthetic.main.fragment_etc.*
-import kotlinx.android.synthetic.main.fragment_home.*
 
 class MoreFragment() : Fragment() {
 
     companion object {
-        val KEY_TITLE = "key-title"
+        const val KEY_TITLE = "key-title"
     }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = inflater?.inflate(R.layout.fragment_etc, container, false)
+    ): View? = inflater.inflate(R.layout.fragment_etc, container, false)
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

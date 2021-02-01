@@ -2,5 +2,5 @@ package com.soten.androidstudio.udemylearn.data.source.image
 
 interface ImageDataSource {
 
-    fun loadImageFileName(fileName: (String) -> Unit)
+    fun loadImageList(imageDataList: (List<ImageData>) -> Unit, size: Int)
 }

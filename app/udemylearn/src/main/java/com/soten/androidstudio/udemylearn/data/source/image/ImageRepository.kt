@@ -6,8 +6,8 @@ object ImageRepository : ImageDataSource {
         ImageLocalData()
     }
 
-    override fun loadImageFileName(fileName: (String) -> Unit) {
-        imageLocalData.loadImageFileName(fileName)
+    override fun loadImageList(imageDataList: (List<ImageData>) -> Unit, size: Int) {
+        imageLocalData.loadImageList(imageDataList, size)
     }
 
 }
