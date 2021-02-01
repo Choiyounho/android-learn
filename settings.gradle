@@ -1,2 +1,3 @@
+include ':app:udemylearn'
 include ':app'
 rootProject.name = "learn"
