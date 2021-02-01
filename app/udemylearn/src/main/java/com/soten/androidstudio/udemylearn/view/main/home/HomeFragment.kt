@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.soten.androidstudio.udemylearn.R
+import com.soten.androidstudio.udemylearn.data.source.image.ImageRepository
 import com.soten.androidstudio.udemylearn.view.main.home.presenter.HomeContract
 import com.soten.androidstudio.udemylearn.view.main.home.presenter.HomePresenter
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -13,7 +14,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class HomeFragment : Fragment(), HomeContract.View {
 
     private val homePresenter: HomePresenter by lazy {
-        HomePresenter(this@HomeFragment)
+        HomePresenter(this@HomeFragment, ImageRepository)
     }
 
     override fun onCreateView(
