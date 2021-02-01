@@ -2,7 +2,7 @@ package com.soten.androidstudio.udemylearn.view.main.home.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.soten.androidstudio.udemylearn.data.source.image.ImageData
+import com.soten.androidstudio.udemylearn.data.ImageData
 import com.soten.androidstudio.udemylearn.view.main.home.adapter.holder.ImageViewHolder
 import com.soten.androidstudio.udemylearn.view.main.home.adapter.model.ImageRecyclerModel
 

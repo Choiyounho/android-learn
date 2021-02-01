@@ -1,6 +1,6 @@
 package com.soten.androidstudio.udemylearn.view.main.home.adapter.model
 
-import com.soten.androidstudio.udemylearn.data.source.image.ImageData
+import com.soten.androidstudio.udemylearn.data.ImageData
 
 interface ImageRecyclerModel {
 

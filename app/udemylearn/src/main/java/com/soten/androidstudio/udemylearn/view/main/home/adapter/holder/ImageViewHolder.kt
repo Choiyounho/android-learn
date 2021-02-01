@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.soten.androidstudio.udemylearn.R
-import com.soten.androidstudio.udemylearn.data.source.image.ImageData
+import com.soten.androidstudio.udemylearn.data.ImageData
 import kotlinx.android.synthetic.main.item_image_view.view.*
 
 class ImageViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
@@ -19,12 +19,6 @@ class ImageViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
 
     private fun View.onBind(item: ImageData) {
         tv_title.text = item.name
-        img_view.setImageResource(
-            resources.getIdentifier(
-                item.fileName,
-                "drawable",
-                context.packageName
-            )
-        )
+        img_view.loadImage(item.fileName)
     }
 }
