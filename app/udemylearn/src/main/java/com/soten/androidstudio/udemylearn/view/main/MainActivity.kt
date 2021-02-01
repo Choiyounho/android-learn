@@ -5,16 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.soten.androidstudio.udemylearn.R
 import com.soten.androidstudio.udemylearn.util.replace
+import com.soten.androidstudio.udemylearn.view.main.home.HomeFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     private val homeFragment: HomeFragment by lazy {
-        HomeFragment().apply {
-            arguments = Bundle().apply {
-                putInt(HomeFragment.KEY_TITLE, R.string.title_home)
-            }
-        }
+        HomeFragment()
     }
 
     private val cameraFragment : CameraFragment by lazy {

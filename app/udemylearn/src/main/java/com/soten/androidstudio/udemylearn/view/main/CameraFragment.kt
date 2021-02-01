@@ -6,26 +6,24 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.soten.androidstudio.udemylearn.R
+import kotlinx.android.synthetic.main.fragment_etc.*
 
 class CameraFragment : Fragment() {
+
     companion object {
         val KEY_TITLE = "key-title"
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View? = inflater?.inflate(R.layout.fragment_etc, container, false)
 
-        inflater?.inflate(R.layout.fragment_etc, container, false)
-        return super.onCreateView(inflater, container, savedInstanceState)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        arguments?.getInt(KEY_TITLE)
+        message.text = (arguments?.getInt(KEY_TITLE) ?: 0).toString()
     }
 }
