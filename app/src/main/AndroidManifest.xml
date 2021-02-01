@@ -12,35 +12,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Learn">
-        <activity android:name=".PermissionActivity">
+        <activity android:name=".fastcampus.PermissionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".retrofit.RetrofitActivity" />
-        <activity android:name=".NetworkActivity" />
-        <activity android:name=".AsyncActivity" />
-        <activity android:name=".RealmActivity" />
-        <activity android:name=".SharedPreferenceActivity" />
-        <activity android:name=".tablayout.TabPager2Activity" />
-        <activity android:name=".tablayout.TabPagerActivity" />
-        <activity android:name=".PhoneBookWithRecyclerViewActivity" />
-        <activity android:name=".RecyclerViewActivity" />
-        <activity android:name=".ListViewActivity" />
-        <activity android:name=".exam.PhoneBookDetailActivity" />
-        <activity android:name=".exam.PhoneBookActivity" />
-        <activity android:name=".AddViewActivity" />
-        <activity android:name=".LibraryActivity" />
-        <activity android:name=".ThreadActivity" />
-        <activity android:name=".FragmentActivity" />
-        <activity android:name=".exam.openLink" />
-        <activity android:name=".Intent2" />
-        <activity android:name=".Intent1" />
-        <activity android:name=".exam.Calculator" />
-        <activity android:name=".Listener" />
-        <activity android:name=".LifeCycle" />
+        <activity android:name=".fastcampus.retrofit.RetrofitActivity" />
+        <activity android:name=".fastcampus.NetworkActivity" />
+        <activity android:name=".fastcampus.AsyncActivity" />
+        <activity android:name=".fastcampus.RealmActivity" />
+        <activity android:name=".fastcampus.SharedPreferenceActivity" />
+        <activity android:name=".fastcampus.tablayout.TabPager2Activity" />
+        <activity android:name=".fastcampus.tablayout.TabPagerActivity" />
+        <activity android:name=".fastcampus.PhoneBookWithRecyclerViewActivity" />
+        <activity android:name=".fastcampus.RecyclerViewActivity" />
+        <activity android:name=".fastcampus.ListViewActivity" />
+        <activity android:name=".fastcampus.exam.PhoneBookDetailActivity" />
+        <activity android:name=".fastcampus.exam.PhoneBookActivity" />
+        <activity android:name=".fastcampus.AddViewActivity" />
+        <activity android:name=".fastcampus.LibraryActivity" />
+        <activity android:name=".fastcampus.ThreadActivity" />
+        <activity android:name=".fastcampus.FragmentActivity" />
+        <activity android:name=".fastcampus.exam.openLink" />
+        <activity android:name=".fastcampus.Intent2" />
+        <activity android:name=".fastcampus.Intent1" />
+        <activity android:name=".fastcampus.exam.Calculator" />
+        <activity android:name=".fastcampus.Listener" />
+        <activity android:name=".fastcampus.LifeCycle" />
     </application>
 
 </manifest>

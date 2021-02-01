@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="5dp"
     android:orientation="vertical"
-    tools:context=".RealmActivity">
+    tools:context=".fastcampus.RealmActivity">
 
     <Button
         android:id="@+id/button_realm_save"
