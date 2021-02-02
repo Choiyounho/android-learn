@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.soten.androidstudio.udemylearn.R
+import com.soten.androidstudio.udemylearn.data.source.flickr.FlickrRepository
 import com.soten.androidstudio.udemylearn.data.source.image.ImageRepository
 import com.soten.androidstudio.udemylearn.view.main.home.adapter.ImageRecyclerAdapter
 import com.soten.androidstudio.udemylearn.view.main.home.presenter.HomeContract
@@ -17,7 +18,10 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class HomeFragment : Fragment(), HomeContract.View {
 
     private val homePresenter: HomePresenter by lazy {
-        HomePresenter(this@HomeFragment, ImageRepository, imageRecyclerAdapter)
+        HomePresenter(this@HomeFragment,
+            FlickrRepository,
+            ImageRepository,
+            imageRecyclerAdapter)
     }
 
     // API 최신화로 context 대신 requireContext 사용
@@ -32,6 +36,7 @@ class HomeFragment : Fragment(), HomeContract.View {
         super.onViewCreated(view, savedInstanceState)
 
         homePresenter.loadImage()
+        homePresenter.loadFlickrImage()
 
         recycler_view.run {
             adapter = imageRecyclerAdapter
@@ -60,10 +65,9 @@ class HomeFragment : Fragment(), HomeContract.View {
 
             val visibleItemCount = recyclerView.childCount
             val totalItemCount = imageRecyclerAdapter.itemCount
-            val firstVisibleItem = (recyclerView.layoutManager as? GridLayoutManager)?.findFirstVisibleItemPosition()
-                ?: 0
+            val firstVisibleItem = (recyclerView.layoutManager as? GridLayoutManager)?.findFirstVisibleItemPosition() ?: 0
 
-            if (!homePresenter.isLoading && (firstVisibleItem + visibleItemCount) >= totalItemCount - 7) {
+            if (!homePresenter.isLoading && (firstVisibleItem + visibleItemCount) >= totalItemCount - 3) {
                 homePresenter.loadImage()
             }
         }

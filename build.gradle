@@ -28,3 +28,9 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    flickrApiKey = properties.getProperty('flickrApiKey', "0d68bb1bfcca3e2b")
+}
