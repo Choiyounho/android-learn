@@ -5,10 +5,13 @@ interface HomeContract {
     interface View {
         fun showProgress()
         fun hideProgress()
+
+        fun showLoadFail()
+        fun showLoadFail(message: String)
     }
 
     interface Presenter {
-        fun loadImage()
+
         fun loadFlickrImage()
     }
 }

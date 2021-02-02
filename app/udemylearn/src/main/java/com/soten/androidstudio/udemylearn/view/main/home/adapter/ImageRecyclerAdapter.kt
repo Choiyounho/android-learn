@@ -3,12 +3,13 @@ package com.soten.androidstudio.udemylearn.view.main.home.adapter
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.soten.androidstudio.udemylearn.data.ImageData
+import com.soten.androidstudio.udemylearn.data.Photo
 import com.soten.androidstudio.udemylearn.view.main.home.adapter.holder.ImageViewHolder
 import com.soten.androidstudio.udemylearn.view.main.home.adapter.model.ImageRecyclerModel
 
 class ImageRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(), ImageRecyclerModel {
 
-    private val list = mutableListOf<ImageData>()
+    private val list = mutableListOf<Photo>()
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as? ImageViewHolder)?.onBind(list[position])
@@ -20,8 +21,8 @@ class ImageRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(), Im
         return ImageViewHolder(parent)
     }
 
-    override fun addItem(imageData: ImageData) {
-        list.add(imageData)
+    override fun addItem(imageData: Photo) {
+        list.add(imageData )
     }
 
     override fun notifyDataSetChang() {

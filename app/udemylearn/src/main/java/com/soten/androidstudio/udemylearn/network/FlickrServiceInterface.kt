@@ -9,7 +9,9 @@ import retrofit2.http.Query
 interface FlickrServiceInterface {
 
     @POST("?method=flickr.photos.getRecent&api_key=${BuildConfig.FLICKR_API_KEY}&format=json&nojsoncallback=1")
-    fun getFLickrRecentPhotos(
+    fun getFlickrSearchPhotos(
+        @Query("text") keyword: String,
+        @Query("safe_search") safeSearch: Int = 1,
         @Query("page") page: Int,
         @Query("per_page") perPage: Int
     ): Call<PhotoResponse>

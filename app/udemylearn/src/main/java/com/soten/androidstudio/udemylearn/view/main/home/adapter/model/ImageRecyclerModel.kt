@@ -1,10 +1,10 @@
 package com.soten.androidstudio.udemylearn.view.main.home.adapter.model
 
-import com.soten.androidstudio.udemylearn.data.ImageData
+import com.soten.androidstudio.udemylearn.data.Photo
 
 interface ImageRecyclerModel {
 
-    fun addItem(imageData: ImageData)
+    fun addItem(imageData: Photo)
 
     fun getItemCount(): Int
 

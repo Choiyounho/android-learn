@@ -7,18 +7,18 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.soten.androidstudio.udemylearn.R
 import com.soten.androidstudio.udemylearn.data.ImageData
+import com.soten.androidstudio.udemylearn.data.Photo
 import kotlinx.android.synthetic.main.item_image_view.view.*
 
 class ImageViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
     LayoutInflater.from(parent.context).inflate(R.layout.item_image_view, parent, false)
 ) {
 
-    fun onBind(item: ImageData) {
+    fun onBind(item: Photo) {
         itemView.onBind(item)
     }
 
-    private fun View.onBind(item: ImageData) {
-        tv_title.text = item.name
-        img_view.loadImage(item.fileName)
+    private fun View.onBind(item: Photo) {
+        img_view.loadImage(item.getImageUrl())
     }
 }
