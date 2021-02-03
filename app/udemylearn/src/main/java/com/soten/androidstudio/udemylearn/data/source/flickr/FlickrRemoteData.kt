@@ -1,7 +1,9 @@
 package com.soten.androidstudio.udemylearn.data.source.flickr
 
+import com.soten.androidstudio.udemylearn.data.PhotoInfo
 import com.soten.androidstudio.udemylearn.network.FlickrServiceInterface
 import com.soten.androidstudio.udemylearn.network.createRetrofit
+import retrofit2.Call
 
 class FlickrRemoteData : FlickrDataSource {
 
@@ -17,4 +19,7 @@ class FlickrRemoteData : FlickrDataSource {
         keyword = keyword,
         page = page,
         perPage = perPage)
+
+    override fun getPhotoDetail(photoId: String): Call<PhotoInfo> =
+        flickrServiceInterface.getFlickrPhotoDetail(photoId)
 }

@@ -3,6 +3,8 @@ package com.soten.androidstudio.udemylearn.util
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import java.text.DecimalFormat
+import java.text.SimpleDateFormat
 import java.util.*
 
 fun AppCompatActivity.replace(@IdRes frameId: Int, fragment: Fragment, tag: String? = null) {
@@ -10,3 +12,14 @@ fun AppCompatActivity.replace(@IdRes frameId: Int, fragment: Fragment, tag: Stri
 }
 
 fun ClosedRange<Int>.random() = Random().nextInt(endInclusive - start)
+
+fun String.decimalFormat(): String {
+    return DecimalFormat("#,###").format(this.toLong())
+}
+
+fun String.getDate(dateFormat: String): String {
+    val calendar = Calendar.getInstance().apply {
+        timeInMillis = this@getDate.toLong() * 1000
+    }
+    return SimpleDateFormat(dateFormat, Locale.getDefault()).format(calendar.time)
+}

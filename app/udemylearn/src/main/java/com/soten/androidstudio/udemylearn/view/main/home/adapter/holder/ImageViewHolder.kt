@@ -6,13 +6,21 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.soten.androidstudio.udemylearn.R
-import com.soten.androidstudio.udemylearn.data.ImageData
 import com.soten.androidstudio.udemylearn.data.Photo
 import kotlinx.android.synthetic.main.item_image_view.view.*
 
-class ImageViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
+class ImageViewHolder(
+    onClick: (Int) -> Unit,
+    parent: ViewGroup
+) : RecyclerView.ViewHolder(
     LayoutInflater.from(parent.context).inflate(R.layout.item_image_view, parent, false)
 ) {
+
+    init {
+        itemView.setOnClickListener {
+            onClick(adapterPosition)
+        }
+    }
 
     fun onBind(item: Photo) {
         itemView.onBind(item)

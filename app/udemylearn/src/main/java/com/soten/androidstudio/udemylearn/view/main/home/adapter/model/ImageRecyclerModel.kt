@@ -6,7 +6,11 @@ interface ImageRecyclerModel {
 
     fun addItem(imageData: Photo)
 
+    fun getItem(position: Int): Photo
+
     fun getItemCount(): Int
 
     fun notifyDataSetChang()
+
+    var onClick: (Int) -> Unit
 }

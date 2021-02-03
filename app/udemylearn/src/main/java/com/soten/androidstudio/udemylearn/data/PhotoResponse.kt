@@ -16,8 +16,8 @@ data class Photos(
 )
 
 data class Photo(
-    val farm: Int,
-    private val id: String,
+    private val farm: Int,
+    val id: String,
     val isfamily: Int,
     val isfriend: Int,
     val ispublic: Int,

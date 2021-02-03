@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.soten.androidstudio.udemylearn.R
 import com.soten.androidstudio.udemylearn.data.source.flickr.FlickrRepository
 import com.soten.androidstudio.udemylearn.data.source.image.ImageRepository
+import com.soten.androidstudio.udemylearn.view.main.detail.DetailImageBottomSheet
 import com.soten.androidstudio.udemylearn.view.main.home.adapter.ImageRecyclerAdapter
 import com.soten.androidstudio.udemylearn.view.main.home.presenter.HomeContract
 import com.soten.androidstudio.udemylearn.view.main.home.presenter.HomePresenter
@@ -63,6 +64,13 @@ class HomeFragment : Fragment(), HomeContract.View {
         if (isDetached) return
 
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun showBottomSheetDialog(photoId: String) {
+        if (isDetached) return
+
+        DetailImageBottomSheet.create(photoId)
+            .show(requireActivity().supportFragmentManager, "DetailImageBottomSheet")
     }
 
     override fun showProgress() {

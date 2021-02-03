@@ -3,11 +3,14 @@ package com.soten.androidstudio.udemylearn.view.main.home.presenter
 interface HomeContract {
 
     interface View {
-        fun showProgress()
+
         fun hideProgress()
+        fun showProgress()
 
         fun showLoadFail()
         fun showLoadFail(message: String)
+
+        fun showBottomSheetDialog(photoId: String)
     }
 
     interface Presenter {
