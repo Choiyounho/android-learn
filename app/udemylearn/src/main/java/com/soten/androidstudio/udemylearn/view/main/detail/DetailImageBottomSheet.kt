@@ -1,12 +1,14 @@
 package com.soten.androidstudio.udemylearn.view.main.detail
 
 import android.app.Dialog
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.browser.customtabs.CustomTabsIntent
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.soten.androidstudio.udemylearn.R
@@ -95,7 +97,7 @@ class DetailImageBottomSheet : BottomSheetDialogFragment(), DetailImageContract.
         }
 
         img_web.setOnClickListener {
-            // Show chrome.
+            detailImagePresenter.loadFlickrWebPage()
         }
 
         detailImagePresenter.loadDetailInfo(arguments?.getString(KEY_PHOTO_ID) ?: "")
@@ -125,5 +127,13 @@ class DetailImageBottomSheet : BottomSheetDialogFragment(), DetailImageContract.
         tv_date.text = date
         tv_viewer_count.text = viewCount
         tv_comment_count.text = commentCount
+    }
+
+    override fun showFlickrWebPage(url: String) {
+        CustomTabsIntent.Builder().apply {
+            setToolbarColor(resources.getColor(R.color.design_default_color_primary))
+        }.build().run {
+            launchUrl(requireContext(), Uri.parse(url))
+        }
     }
 }

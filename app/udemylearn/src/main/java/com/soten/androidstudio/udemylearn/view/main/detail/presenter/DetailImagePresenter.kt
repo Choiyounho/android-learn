@@ -13,6 +13,8 @@ class DetailImagePresenter(
     private val repository: FlickrRepository
 ) : DetailImageContract.Presenter {
 
+    private var webUrl: String = ""
+
     override fun loadDetailInfo(photoId: String) {
         repository.getPhotoDetail(photoId)
             .enqueue(object : Callback<PhotoInfo> {
@@ -35,6 +37,8 @@ class DetailImagePresenter(
                                     it.owner.getBuddyIcons(),
                                     it.owner.username
                                 )
+
+                                webUrl = it.urls.url.firstOrNull()?._content ?: ""
                             }
                         }
                     }
@@ -44,6 +48,10 @@ class DetailImagePresenter(
                     t?.printStackTrace()
                 }
             })
+    }
+
+    override fun loadFlickrWebPage() {
+        if (webUrl.isNotEmpty()) view.showFlickrWebPage(webUrl)
     }
 }
 

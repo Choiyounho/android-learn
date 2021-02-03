@@ -14,10 +14,14 @@ interface DetailImageContract {
             viewCount: String,
             commentCount: String
         )
+
+        fun showFlickrWebPage(url: String)
     }
 
     interface Presenter {
 
         fun loadDetailInfo(photoId: String)
+
+        fun loadFlickrWebPage()
     }
 }
