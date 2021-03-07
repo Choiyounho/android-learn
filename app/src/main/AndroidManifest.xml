@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Learn">
+        <activity android:name=".fastcampus.instagram.LoginActivity"></activity>
         <activity android:name=".fastcampus.instagram.EmailSignUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,7 +37,7 @@
         <activity android:name=".fastcampus.AddViewActivity" />
         <activity android:name=".fastcampus.LibraryActivity" />
         <activity android:name=".fastcampus.ThreadActivity" />
-        <activity android:name=".fastcampus.FragmentActivity"></activity>
+        <activity android:name=".fastcampus.FragmentActivity" />
         <activity android:name=".fastcampus.exam.openLink" />
         <activity android:name=".fastcampus.Intent2" />
         <activity android:name=".fastcampus.Intent1" />

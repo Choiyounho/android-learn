@@ -2,8 +2,8 @@ package com.soten.androidstudio.learn.fastcampus.instagram
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -27,14 +27,14 @@ class EmailSignUpActivity : AppCompatActivity() {
         setContentView(R.layout.activity_email_sign_up)
 
         initView(this@EmailSignUpActivity)
-        setUpListener(this)
+        setUpListener(this@EmailSignUpActivity)
 
     }
 
     private fun initView(activity: EmailSignUpActivity) {
-        userName = activity.findViewById(R.id.input_id)
-        userPassword = activity.findViewById(R.id.input_password)
-        userPasswordConfirm = activity.findViewById(R.id.confirm_password)
+        userName = activity.findViewById(R.id.username_inputbox)
+        userPassword = activity.findViewById(R.id.password1_inputbox)
+        userPasswordConfirm = activity.findViewById(R.id.password2_inputbox)
         registerButton = activity.findViewById(R.id.btn_register)
         loginButton = activity.findViewById(R.id.btn_login)
     }
@@ -44,9 +44,7 @@ class EmailSignUpActivity : AppCompatActivity() {
             register(this@EmailSignUpActivity)
         }
         loginButton.setOnClickListener {
-            val sp = activity.getSharedPreferences("login_sp", Context.MODE_PRIVATE)
-            val token = sp.getString("login_sp", "")
-            Log.d("test", "$token")
+            startActivity(Intent(this@EmailSignUpActivity, LoginActivity::class.java))
         }
     }
 
@@ -80,9 +78,9 @@ class EmailSignUpActivity : AppCompatActivity() {
         editor.apply()
     }
 
-    fun getUserName(): String = userName.text.toString()
+    private fun getUserName(): String = userName.text.toString()
 
-    fun getUserPassword(): String = userPassword.text.toString()
+    private fun getUserPassword(): String = userPassword.text.toString()
 
-    fun getUserPasswordConfirm(): String = userPasswordConfirm.text.toString()
+    private fun getUserPasswordConfirm(): String = userPasswordConfirm.text.toString()
 }
