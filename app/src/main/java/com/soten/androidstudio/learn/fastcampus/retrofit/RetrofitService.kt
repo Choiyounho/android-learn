@@ -1,8 +1,7 @@
 package com.soten.androidstudio.learn.fastcampus.retrofit
 
 import com.soten.androidstudio.learn.fastcampus.PersonFromServer
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
+import com.soten.androidstudio.learn.fastcampus.instagram.User
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -16,35 +15,13 @@ interface RetrofitService {
 
     @POST(value = "json/students/")
     fun createStudentEasy(@Body person : PersonFromServer) : Call<PersonFromServer>
-//
-//    @POST("user/signup/")
-//    @FormUrlEncoded
-//    fun register(
-//        @Field("username") usernmae: String,
-//        @Field("password1") password1: String,
-//        @Field("password2") pasword2: String
-//    ): Call<User>
-//
-//
-//    @POST("user/login/")
-//    @FormUrlEncoded
-//    fun login(
-//        @Field("username") username: String,
-//        @Field("password") password: String
-//    ): Call<User>
-//
-//
-//    @GET("instagram/post/list/all/")
-//    fun getAllPosts(): Call<ArrayList<Post>>
-//
-//    @Multipart
-//    @POST("instagram/post/")
-//    fun uploadPost(
-//        @Part image : MultipartBody.Part,
-//        @Part("content")requestBody : RequestBody
-//    ):Call<Post>
-//
-//    @GET("instagram/post/list/")
-//    fun getUserPostList():Call<ArrayList<Post>>
+
+    @POST("user/signup/")
+    @FormUrlEncoded
+    fun register(
+        @Field("username") username: String,
+        @Field("password1") password: String,
+        @Field("password2") passwordConfirm: String
+    ): Call<User>
 
 }

@@ -2,7 +2,6 @@ package com.soten.androidstudio.learn.fastcampus.instagram
 
 import android.app.Application
 import android.content.Context
-import android.util.Log
 import com.facebook.stetho.Stetho
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.soten.androidstudio.learn.fastcampus.retrofit.RetrofitService
@@ -14,53 +13,52 @@ import retrofit2.converter.gson.GsonConverterFactory
 class MasterApplication : Application() { // Application()은 앱 전반의 설정을 할 때
 
     lateinit var service: RetrofitService
-
     override fun onCreate() {
         super.onCreate()
-        Stetho.initializeWithDefaults(this@MasterApplication)
+        Stetho.initializeWithDefaults(this)
         createRetrofit()
-
     }
 
-    private fun createRetrofit() {
+
+    fun createRetrofit() {
         val header = Interceptor {
             val original = it.request()
             if (checkIsLogin()) {
                 getUserToken()?.let { token ->
                     val request = original.newBuilder()
-                        .header("Authorization", token)
+                        .header("Authorization", "token $token")
                         .build()
                     it.proceed(request)
                 }
-
             } else {
                 it.proceed(original)
             }
         }
-
         val client = OkHttpClient.Builder()
             .addInterceptor(header)
             .addNetworkInterceptor(StethoInterceptor())
             .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://melowcode.org/")
+            .baseUrl("http://mellowcode.org/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
 
         service = retrofit.create(RetrofitService::class.java)
+
     }
 
-    private fun checkIsLogin(): Boolean {
-        val sharedPreferences = getSharedPreferences("login_sp", Context.MODE_PRIVATE)
-        val token = sharedPreferences.getString("login_sp", "null")
-        token?.let { return true } ?: return false
+    fun checkIsLogin(): Boolean {
+        val sp = getSharedPreferences("login_sp", Context.MODE_PRIVATE)
+        val token = sp.getString("login_sp", "null")
+        return token != "null"
     }
 
-    private fun getUserToken(): String? {
-        val sharedPreferences = getSharedPreferences("login_sp", Context.MODE_PRIVATE)
-        val token = sharedPreferences.getString("login_sp", "null")
-        token?.let { return token } ?: return null
+    fun getUserToken(): String? {
+        val sp = getSharedPreferences("login_sp", Context.MODE_PRIVATE)
+        val token = sp.getString("login_sp", "null")
+        if (token == "null") return null
+        else return token
     }
 }
