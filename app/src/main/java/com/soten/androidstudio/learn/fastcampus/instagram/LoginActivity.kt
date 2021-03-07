@@ -2,6 +2,7 @@ package com.soten.androidstudio.learn.fastcampus.instagram
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -30,13 +31,13 @@ class LoginActivity : AppCompatActivity() {
                         saveUserToken(token, this@LoginActivity)
                         (application as MasterApplication).createRetrofit()
                         Toast.makeText(this@LoginActivity, "로그인 하셨습니다", Toast.LENGTH_LONG).show()
+                        startActivity(Intent(this@LoginActivity, InstagramPostListActivity::class.java))
                     }
                 }
 
                 override fun onFailure(call: Call<User>, t: Throwable) {
 
                 }
-
             })
         }
     }

@@ -62,6 +62,8 @@ class EmailSignUpActivity : AppCompatActivity() {
                         val user = response.body()
                         val token = user!!.token!!
                         saveUserToken(token, activity)
+                        (application as MasterApplication).createRetrofit()
+                        activity.startActivity(Intent(activity, InstagramPostListActivity::class.java))
                     }
                 }
 

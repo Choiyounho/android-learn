@@ -1,6 +1,7 @@
 package com.soten.androidstudio.learn.fastcampus.retrofit
 
 import com.soten.androidstudio.learn.fastcampus.PersonFromServer
+import com.soten.androidstudio.learn.fastcampus.instagram.Post
 import com.soten.androidstudio.learn.fastcampus.instagram.User
 import retrofit2.Call
 import retrofit2.http.*
@@ -30,4 +31,7 @@ interface RetrofitService {
         @Field("username") username: String,
         @Field("password") password: String
     ): Call<User>
+
+    @GET("/instagram/post/list/all/")
+    fun getAllPosts(): Call<ArrayList<Post>>
 }
