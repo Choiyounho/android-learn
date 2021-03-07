@@ -1,5 +1,4 @@
-include ':app:bottomsheetsample'
 include ':app:imageloadsample'
 include ':app:udemylearn'
-include ':app'
+include ':app:'
 rootProject.name = "learn"

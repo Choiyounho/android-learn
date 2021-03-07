@@ -55,7 +55,6 @@ class FragmentActivity : AppCompatActivity(), FragmentOne.OnDataPassListener {
             fragmentTransaction.remove(fragmentOne)
             fragmentTransaction.commit()
         }
-
     }
 
     override fun onStart() {
