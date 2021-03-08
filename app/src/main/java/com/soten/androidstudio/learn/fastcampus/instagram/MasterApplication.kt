@@ -55,10 +55,10 @@ class MasterApplication : Application() { // Application()은 앱 전반의 설�
         return token != "null"
     }
 
-    fun getUserToken(): String? {
+    private fun getUserToken(): String? {
         val sp = getSharedPreferences("login_sp", Context.MODE_PRIVATE)
         val token = sp.getString("login_sp", "null")
-        if (token == "null") return null
-        else return token
+        token?.let { return token } ?: return null
     }
+
 }

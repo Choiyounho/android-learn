@@ -1,5 +1,6 @@
 package com.soten.androidstudio.learn.fastcampus.instagram
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import com.soten.androidstudio.learn.R
 import kotlinx.android.synthetic.main.activity_instagram_post_list.*
+import kotlinx.android.synthetic.main.activity_phone_book_detail.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -37,11 +39,12 @@ class InstagramPostListActivity : AppCompatActivity() {
                         val postList = response.body()
                         val adapter = PostAdapter(
                             postList!!,
-                        LayoutInflater.from(this@InstagramPostListActivity),
-                        glide
+                            LayoutInflater.from(this@InstagramPostListActivity),
+                            glide
                         )
                         post_recyclerview.adapter = adapter
-                        post_recyclerview.layoutManager = LinearLayoutManager(this@InstagramPostListActivity)
+                        post_recyclerview.layoutManager =
+                            LinearLayoutManager(this@InstagramPostListActivity)
                     }
                 }
 
@@ -50,15 +53,25 @@ class InstagramPostListActivity : AppCompatActivity() {
                 }
             }
         )
+
+        info.setOnClickListener {
+            startActivity(
+                Intent(this, InstagramUserInfoActivity::class.java)) }
+        my_list.setOnClickListener {
+            startActivity(
+                Intent(this, InstagramMyPostActivity::class.java)) }
+        upload.setOnClickListener {
+            startActivity(
+                Intent(this, InstagramUploadActivity::class.java)) }
     }
 
     class PostAdapter(
         val postList: ArrayList<Post>,
         val inflater: LayoutInflater,
         val glide: RequestManager
-    ): RecyclerView.Adapter<PostAdapter.ViewHolder>() {
+    ) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
 
-        inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+        inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             val postOwner: TextView = itemView.findViewById(R.id.post_owner)
             val postImage: ImageView = itemView.findViewById(R.id.post_img)
             val postContent: TextView = itemView.findViewById(R.id.post_content)

@@ -24,11 +24,15 @@ class EmailSignUpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_email_sign_up)
 
-        initView(this@EmailSignUpActivity)
-        setUpListener(this@EmailSignUpActivity)
-
+        if ((application as MasterApplication).checkIsLogin()) {
+            finish()
+            startActivity(Intent(this@EmailSignUpActivity, InstagramPostListActivity::class.java))
+        } else {
+            setContentView(R.layout.activity_email_sign_up)
+            initView(this@EmailSignUpActivity)
+            setUpListener(this@EmailSignUpActivity)
+        }
     }
 
     private fun initView(activity: EmailSignUpActivity) {
