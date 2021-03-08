@@ -14,7 +14,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import com.soten.androidstudio.learn.R
 import kotlinx.android.synthetic.main.activity_instagram_post_list.*
-import kotlinx.android.synthetic.main.activity_phone_book_detail.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -49,7 +48,6 @@ class InstagramPostListActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ArrayList<Post>>, t: Throwable) {
-                    TODO("Not yet implemented")
                 }
             }
         )

@@ -97,6 +97,7 @@ class InstagramUploadActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<Post>, t: Throwable) {
+                Log.d("patht", "fail")
             }
         })
     }
