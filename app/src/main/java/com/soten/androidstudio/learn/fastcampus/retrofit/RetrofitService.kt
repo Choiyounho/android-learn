@@ -3,6 +3,7 @@ package com.soten.androidstudio.learn.fastcampus.retrofit
 import com.soten.androidstudio.learn.fastcampus.PersonFromServer
 import com.soten.androidstudio.learn.fastcampus.instagram.Post
 import com.soten.androidstudio.learn.fastcampus.instagram.User
+import com.soten.androidstudio.learn.fastcampus.youtobe.Youtube
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -47,4 +48,7 @@ interface RetrofitService {
 
     @GET("instagram/post/list/")
     fun getUserPostList(): Call<ArrayList<Post>>
+
+    @GET("youtube/list/")
+    fun getYoutubeList():Call<ArrayList<Youtube>>
 }

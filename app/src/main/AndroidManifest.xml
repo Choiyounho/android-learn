@@ -14,18 +14,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Learn">
-        <activity android:name=".fastcampus.instagram.InstagramUploadActivity"></activity>
-        <activity android:name=".fastcampus.instagram.InstagramMyPostActivity" />
-        <activity android:name=".fastcampus.instagram.InstagramUserInfoActivity" />
-        <activity android:name=".fastcampus.instagram.InstagramPostListActivity" />
-        <activity android:name=".fastcampus.instagram.LoginActivity" />
-        <activity android:name=".fastcampus.instagram.EmailSignUpActivity">
+        <activity android:name=".fastcampus.youtobe.YoutubeDetailActivity"></activity>
+        <activity android:name=".fastcampus.youtobe.YoutubeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".fastcampus.instagram.InstagramUploadActivity" />
+        <activity android:name=".fastcampus.instagram.InstagramMyPostActivity" />
+        <activity android:name=".fastcampus.instagram.InstagramUserInfoActivity" />
+        <activity android:name=".fastcampus.instagram.InstagramPostListActivity" />
+        <activity android:name=".fastcampus.instagram.LoginActivity" />
+        <activity android:name=".fastcampus.instagram.EmailSignUpActivity"></activity>
         <activity android:name=".fastcampus.PermissionActivity" />
         <activity android:name=".fastcampus.retrofit.RetrofitActivity" />
         <activity android:name=".fastcampus.NetworkActivity" />
