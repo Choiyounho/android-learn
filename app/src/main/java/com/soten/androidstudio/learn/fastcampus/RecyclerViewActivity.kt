@@ -26,7 +26,6 @@ class RecyclerViewActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.phonebook_recycler_view)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this@RecyclerViewActivity)
-//        recyclerView.layoutManager = GridLayoutManager(this@RecyclerViewActivity, 2)
     }
 
 }

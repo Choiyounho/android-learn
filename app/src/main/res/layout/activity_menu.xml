@@ -4,16 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".boostcourse.MainActivity">
+    tools:context=".boostcourse.MenuActivity">
 
-    <Button
-        android:id="@+id/button"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="159dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="204dp"
+        android:layout_marginEnd="135dp"
+        android:text="메뉴화면"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="162dp"
         android:layout_marginTop="341dp"
-        android:layout_marginEnd="159dp"
-        android:text="메뉴화면 띄우기"
+        android:layout_marginEnd="162dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
