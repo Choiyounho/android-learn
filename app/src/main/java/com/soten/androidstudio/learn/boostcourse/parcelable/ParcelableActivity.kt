@@ -17,8 +17,10 @@ class ParcelableActivity : AppCompatActivity() {
             val names = ArrayList<String>()
             names.add("CYH")
             names.add("LHG")
-
             intent.putExtra("names", names)
+
+            val data = SimpleData(100, "Hello")
+            intent.putExtra("data", data)
 
             startActivityForResult(intent, 101)
         }

@@ -25,8 +25,20 @@ class ParcelableMenuActivity : AppCompatActivity() {
         passedIntent?.let {
             val names = it.getSerializableExtra("names") as ArrayList<String>
             names.let {
-                Toast.makeText(applicationContext, "전달받은 개수 : ${names.size}", Toast.LENGTH_SHORT).show() }
+                Toast.makeText(applicationContext, "전달받은 개수 : ${names.size}", Toast.LENGTH_SHORT)
+                    .show()
+            }
+            Thread.sleep(2000L)
+            val data = it.getParcelableExtra<SimpleData>("data")
+            data.let {
+                Toast.makeText(
+                    applicationContext,
+                    "전달받은 SimpleData : ${data?.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
-
     }
+
 }
+
