@@ -15,17 +15,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Learn"
         android:usesCleartextTraffic="true">
+        <service
+            android:name=".boostcourse.service.MyService"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity android:name=".boostcourse.parcelable.ParcelableMenuActivity" />
-        <activity android:name=".boostcourse.parcelable.ParcelableActivity" >
+        <activity android:name=".boostcourse.parcelable.ParcelableActivity" />
+        <activity android:name=".boostcourse.CallActivity" />
+        <activity android:name=".boostcourse.MenuActivity" />
+        <activity android:name=".boostcourse.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".boostcourse.CallActivity" />
-        <activity android:name=".boostcourse.MenuActivity" />
-        <activity android:name=".boostcourse.MainActivity" />
         <activity android:name=".fastcampus.melon.MelonActivity" />
         <activity android:name=".fastcampus.youtobe.YoutubeDetailActivity" />
         <activity android:name=".fastcampus.youtobe.YoutubeActivity" />
