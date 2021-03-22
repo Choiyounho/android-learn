@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-
     <application
         android:name=".fastcampus.instagram.MasterApplication"
         android:allowBackup="true"
@@ -16,13 +15,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Learn"
         android:usesCleartextTraffic="true">
-        <activity android:name=".boostcourse.CallActivity">
+        <activity android:name=".boostcourse.parcelable.ParcelableMenuActivity" />
+        <activity android:name=".boostcourse.parcelable.ParcelableActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".boostcourse.CallActivity" />
         <activity android:name=".boostcourse.MenuActivity" />
         <activity android:name=".boostcourse.MainActivity" />
         <activity android:name=".fastcampus.melon.MelonActivity" />
