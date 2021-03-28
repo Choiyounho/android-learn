@@ -17,6 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Learn"
         android:usesCleartextTraffic="true">
+        <activity android:name=".boostcourse.intentdemo.OutputActivity"></activity>
+        <activity android:name=".boostcourse.intentdemo.InputActivity" />
 
         <receiver
             android:name=".boostcourse.receiver.SmsReceiver"
@@ -30,6 +32,7 @@
         <activity android:name=".boostcourse.receiver.ReceiverMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
