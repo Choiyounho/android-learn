@@ -1,4 +1,4 @@
-package com.soten.androidstudio.learn.boostcourse
+package com.soten.androidstudio.learn.boostcourse.intentdemo
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

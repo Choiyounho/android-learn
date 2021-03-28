@@ -4,7 +4,7 @@ import android.app.Service
 import android.content.Intent
 import android.os.IBinder
 import android.util.Log
-import com.soten.androidstudio.learn.boostcourse.MainActivity
+import com.soten.androidstudio.learn.boostcourse.intentdemo.MainActivity
 
 class MyService : Service() {
 

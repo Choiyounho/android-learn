@@ -1,4 +1,4 @@
-package com.soten.androidstudio.learn.boostcourse
+package com.soten.androidstudio.learn.boostcourse.intentdemo
 
 import android.content.ComponentName
 import android.content.Intent
@@ -26,7 +26,7 @@ class CallActivity : AppCompatActivity() {
             val componentIntent = Intent()
             val componentName = ComponentName(
                 "com.soten.androidstudio.learn.boostcourse",
-                "com.soten.androidstudio.learn.boostcourse.MenuActivity"
+                "com.soten.androidstudio.learn.boostcourse.intentdemo.MenuActivity"
             )
             componentIntent.component = componentName
             startActivity(componentIntent)

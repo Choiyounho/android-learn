@@ -41,9 +41,9 @@
 
         <activity android:name=".boostcourse.parcelable.ParcelableMenuActivity" />
         <activity android:name=".boostcourse.parcelable.ParcelableActivity" />
-        <activity android:name=".boostcourse.CallActivity" />
-        <activity android:name=".boostcourse.MenuActivity" />
-        <activity android:name=".boostcourse.MainActivity" />
+        <activity android:name=".boostcourse.intentdemo.CallActivity" />
+        <activity android:name=".boostcourse.intentdemo.MenuActivity" />
+        <activity android:name=".boostcourse.intentdemo.MainActivity" />
         <activity android:name=".fastcampus.melon.MelonActivity" />
         <activity android:name=".fastcampus.youtobe.YoutubeDetailActivity" />
         <activity android:name=".fastcampus.youtobe.YoutubeActivity" />

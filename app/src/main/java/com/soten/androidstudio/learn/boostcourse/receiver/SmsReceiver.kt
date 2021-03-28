@@ -9,6 +9,8 @@ import android.widget.Toast
 class SmsReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
+        Log.d("breceiver", "문자 받음")
+
         when(intent.action) {
             "android.provider.Telephony.SMS_RECEIVED" -> {
                 Toast.makeText(context, "문자 받기", Toast.LENGTH_SHORT).show()
