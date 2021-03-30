@@ -17,7 +17,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Learn"
         android:usesCleartextTraffic="true">
-        <activity android:name=".boostcourse.intentdemo.OutputActivity"></activity>
+        <activity android:name=".boostcourse.server.ServerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".boostcourse.intentdemo.OutputActivity" />
         <activity android:name=".boostcourse.intentdemo.InputActivity" />
 
         <receiver
@@ -29,13 +36,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".boostcourse.receiver.ReceiverMainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".boostcourse.receiver.ReceiverMainActivity"></activity>
 
         <service
             android:name=".boostcourse.service.MyService"
@@ -62,7 +63,9 @@
         <activity android:name=".fastcampus.AsyncActivity" />
         <activity android:name=".fastcampus.RealmActivity" />
         <activity android:name=".fastcampus.SharedPreferenceActivity" />
-        <activity android:name=".fastcampus.tablayout.TabPager2Activity" />
+        <activity android:name=".fastcampus.tablayout.TabPager2Activity">
+
+        </activity>
         <activity android:name=".fastcampus.tablayout.TabPagerActivity" />
         <activity android:name=".fastcampus.PhoneBookWithRecyclerViewActivity" />
         <activity android:name=".fastcampus.RecyclerViewActivity" />
