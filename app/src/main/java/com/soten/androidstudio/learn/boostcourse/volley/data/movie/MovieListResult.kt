@@ -1,4 +1,4 @@
-package com.soten.androidstudio.learn.boostcourse.volley
+package com.soten.androidstudio.learn.boostcourse.volley.data.movie
 
 data class MovieListResult(
 
