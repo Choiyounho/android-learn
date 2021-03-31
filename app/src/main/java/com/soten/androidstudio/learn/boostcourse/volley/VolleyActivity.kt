@@ -8,8 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.google.gson.Gson
 import com.soten.androidstudio.learn.R
 
+@Suppress("NAME_SHADOWING")
 class VolleyActivity : AppCompatActivity() {
 
     private val button: Button by lazy {
@@ -34,12 +36,16 @@ class VolleyActivity : AppCompatActivity() {
     }
 
     private fun sendRequest() {
-        val url = "https://www.google.com/"
+        val url =
+            "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20120101"
 
         val request = object : StringRequest(
             Method.GET,
             url,
-            Response.Listener { response -> print("응답 $response") },
+            Response.Listener { response ->
+                print("응답 $response")
+                processResponse(response)
+            },
             Response.ErrorListener { error -> print("error $error") }) {
             override fun getParams(): MutableMap<String, String> {
                 return HashMap()
@@ -54,5 +60,16 @@ class VolleyActivity : AppCompatActivity() {
 
     private fun print(data: String) {
         textView.append("$data\n").toString()
+    }
+
+    private fun processResponse(response: String) {
+        val gson = Gson()
+        val movieList = gson.fromJson(response, MovieList::class.java)
+
+        movieList.let { movieList ->
+            val countMovie = movieList.boxOfficeResult.dailyBoxOfficeList.size
+            print("박스 오피스 타입 : ${movieList.boxOfficeResult.boxofficeType}")
+            print("응답받은 영화 개수 : $countMovie")
+        }
     }
 }
