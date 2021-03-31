@@ -41,22 +41,22 @@ class TabPagerActivity : AppCompatActivity() {
 
 }
 
-class FragmentPagerAdapter(fragmentManager: FragmentManager, val tabCount: Int) :
+class FragmentPagerAdapter(fragmentManager: FragmentManager, private val tabCount: Int) :
     FragmentStatePagerAdapter(fragmentManager) {
 
     override fun getItem(position: Int): Fragment {
-        when (position) {
+        return when (position) {
             0 -> {
-                return Fragment1()
+                Fragment1()
             }
             1 -> {
-                return Fragment2()
+                Fragment2()
             }
             2 -> {
-                return Fragment3()
+                Fragment3()
             }
             else -> {
-                return Fragment1()
+                Fragment1()
             }
         }
     }

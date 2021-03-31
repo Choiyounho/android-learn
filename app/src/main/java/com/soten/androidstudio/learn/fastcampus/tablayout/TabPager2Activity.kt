@@ -39,7 +39,7 @@ class TabPager2Activity : AppCompatActivity() {
     }
 }
 
-class ThreePageAdapter(val layoutInflater: LayoutInflater) : PagerAdapter() {
+class ThreePageAdapter(private val layoutInflater: LayoutInflater) : PagerAdapter() {
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any { // 뷰를 그려줌
         when(position) {

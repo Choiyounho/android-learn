@@ -34,9 +34,6 @@ class InstagramUploadActivity : AppCompatActivity() {
             uploadPost()
         }
 
-
-
-
         all_list.setOnClickListener {
             startActivity(
                 Intent(this, InstagramPostListActivity::class.java)

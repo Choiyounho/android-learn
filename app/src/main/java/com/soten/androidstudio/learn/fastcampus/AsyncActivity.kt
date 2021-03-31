@@ -39,7 +39,8 @@ class AsyncActivity : AppCompatActivity() {
     }
 }
 
-class BackgroundAsyncTask(val progressbar : ProgressBar, val progressText: TextView
+class BackgroundAsyncTask(
+    private val progressbar : ProgressBar, private val progressText: TextView
 ) : AsyncTask<Int, Int, Int>() {
     // result -> onPostExecute에서 사용할 타입
     // progress -> onProgressUpdate에서 사용할 타입
@@ -53,7 +54,7 @@ class BackgroundAsyncTask(val progressbar : ProgressBar, val progressText: TextV
     }
 
     override fun doInBackground(vararg params: Int?): Int {
-        while (!isCancelled()) {
+        while (!isCancelled) {
             percent++
             Log.d("async", "value : $percent")
             if (percent > 100) {

@@ -39,7 +39,6 @@ interface RetrofitService {
     @GET("instagram/post/list/all/")
     fun getAllPosts(): Call<ArrayList<Post>>
 
-
     @Multipart
     @POST("instagram/post/")
     fun uploadPost(

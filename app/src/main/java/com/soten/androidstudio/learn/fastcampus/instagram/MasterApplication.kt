@@ -24,7 +24,7 @@ class MasterApplication : Application() { // Application()은 앱 전반의 설�
         val header = Interceptor {
             val original = it.request()
             if (checkIsLogin()) {
-                getUserToken()?.let { token ->
+                getUserToken().let { token ->
                     val request = original.newBuilder()
                         .header("Authorization", "token $token")
                         .build()
@@ -46,7 +46,6 @@ class MasterApplication : Application() { // Application()은 앱 전반의 설�
             .build()
 
         service = retrofit.create(RetrofitService::class.java)
-
     }
 
     fun checkIsLogin(): Boolean {

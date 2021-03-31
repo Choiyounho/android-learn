@@ -65,7 +65,8 @@ class InstagramMyPostActivity : AppCompatActivity() {
                             glide
                         )
                         myPostRecyclerView.adapter = adapter
-                        myPostRecyclerView.layoutManager = LinearLayoutManager(this@InstagramMyPostActivity)
+                        myPostRecyclerView.layoutManager =
+                            LinearLayoutManager(this@InstagramMyPostActivity)
                     }
                 }
 
@@ -78,16 +79,15 @@ class InstagramMyPostActivity : AppCompatActivity() {
     }
 
     class MyPostAdapter(
-        val postList: ArrayList<Post>,
+        private val postList: ArrayList<Post>,
         val inflater: LayoutInflater,
-        val glide: RequestManager
+        private val glide: RequestManager
     ) : RecyclerView.Adapter<MyPostAdapter.ViewHolder>() {
 
         inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             val postOwner: TextView = itemView.findViewById(R.id.post_owner)
             val postImage: ImageView = itemView.findViewById(R.id.post_img)
             val postContent: TextView = itemView.findViewById(R.id.post_content)
-
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
