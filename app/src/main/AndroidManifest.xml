@@ -17,6 +17,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Learn"
         android:usesCleartextTraffic="true">
+        <service
+            android:name=".boostcourse.server.ChatService"
+            android:enabled="true"
+            android:exported="true"></service>
+
         <activity android:name=".boostcourse.server.ServerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,7 +41,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".boostcourse.receiver.ReceiverMainActivity"></activity>
+        <activity android:name=".boostcourse.receiver.ReceiverMainActivity" />
 
         <service
             android:name=".boostcourse.service.MyService"
@@ -63,9 +68,7 @@
         <activity android:name=".fastcampus.AsyncActivity" />
         <activity android:name=".fastcampus.RealmActivity" />
         <activity android:name=".fastcampus.SharedPreferenceActivity" />
-        <activity android:name=".fastcampus.tablayout.TabPager2Activity">
-
-        </activity>
+        <activity android:name=".fastcampus.tablayout.TabPager2Activity"></activity>
         <activity android:name=".fastcampus.tablayout.TabPagerActivity" />
         <activity android:name=".fastcampus.PhoneBookWithRecyclerViewActivity" />
         <activity android:name=".fastcampus.RecyclerViewActivity" />
