@@ -62,7 +62,10 @@ class DbActivity : AppCompatActivity() {
             openDatabase(databaseName)
         }
 
-
+        dbMakeBtn.setOnClickListener {
+            val tableName = editText2.text.toString()
+            createTable(tableName)
+        }
     }
 
     private fun openDatabase(databaseName: String) {
@@ -80,6 +83,25 @@ class DbActivity : AppCompatActivity() {
         }
     }
 
+    private fun createTable(tableName: String) {
+        if (tableName == "") {
+            Toast.makeText(applicationContext, "내용을 입력해주세요", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (!database.isOpen) {
+            printing("데이터 베이스를 먼저 오픈해주세요요")
+        }
+
+        printing("createTable() 호출 됨")
+
+        database.let {
+            val sql =
+                "create table $tableName (_id integer PRIMARY KEY autoincrement, name text, age integer, mobile text)"
+            database.execSQL(sql)
+            printing("테이블 생성 됨")
+        }
+    }
 
     private fun printing(data: String) {
         dbText.append("$data \n")
