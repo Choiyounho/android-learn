@@ -1,7 +1,9 @@
 package com.soten.androidstudio.learn.boostcourse.db
 
+import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteOpenHelper
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -161,6 +163,27 @@ class DbActivity : AppCompatActivity() {
 
     private fun printing(data: String) {
         dbText.append("$data \n")
+    }
+
+    inner class DatabaseHelper(
+        context: Context?,
+        name: String?,
+        factory: SQLiteDatabase.CursorFactory?,
+        version: Int
+    ) : SQLiteOpenHelper(context, name, factory, version) {
+
+        override fun onCreate(db: SQLiteDatabase?) {
+            printing("createTable() 호출 됨")
+
+            val tableName = "customer"
+            val sql =
+                "create table if not exists $tableName (_id integer PRIMARY KEY autoincrement, name text, age integer, mobile text)"
+            db?.execSQL(sql)
+            printing("테이블 생성 됨")
+        }
+
+        override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+        }
     }
 
 }
