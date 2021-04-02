@@ -80,6 +80,12 @@ class DbActivity : AppCompatActivity() {
 
             insertData(name, age, number)
         }
+
+        dbSelectBtn.setOnClickListener {
+            val tableName = editText2.text.toString()
+
+            selectData(tableName)
+        }
     }
 
     private fun openDatabase(databaseName: String) {
@@ -130,6 +136,26 @@ class DbActivity : AppCompatActivity() {
 
             database.execSQL(sql, params)
             printing("data 추가함")
+        }
+    }
+
+    private fun selectData(tableName: String) {
+        printing("selectData() 호출")
+
+        database.let {
+            val sql = "select name, age, mobile from $tableName"
+            val cursor = database.rawQuery(sql, null)
+            printing("조회된 데이터 개수 : ${cursor.count}")
+
+            for (i in 0 until cursor.count) {
+                cursor.moveToNext()
+                val name = cursor.getString(0)
+                val age = cursor.getInt(1)
+                val mobile = cursor.getString(2)
+
+                printing("# $i -> $name, $age, $mobile")
+            }
+            cursor.close()
         }
     }
 
