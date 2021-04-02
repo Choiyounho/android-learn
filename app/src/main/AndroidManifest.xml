@@ -17,13 +17,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Learn"
         android:usesCleartextTraffic="true">
-        <activity android:name=".boostcourse.volley.VolleyActivity">
+        <activity android:name=".boostcourse.db.DbActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".boostcourse.volley.VolleyActivity" />
 
         <service
             android:name=".boostcourse.server.ChatService"

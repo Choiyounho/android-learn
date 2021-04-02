@@ -47,15 +47,9 @@ class VolleyActivity : AppCompatActivity() {
         AppHelper.requestQueue = Volley.newRequestQueue(applicationContext)
     }
 
-    private fun sendImageRequest() {
-        val url = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTAxMjdfODYg%2FMDAxNjExNzMzNTkwNzE5.NXCulnOX98ypQd0sReYxFTX4w__NhMwXs2yMh_X4rRYg.wStQx6ZF8FaardIWYXygzV35l4QWPMiT3U192IB7r7sg.JPEG.lovevilbo%2F98f837ae15eb5f01629a9a6a4304302b.jpg&type=sc960_832"
-        val task = ImageLoadTask(url, movieImg)
-        task.execute()
-    }
-
     private fun sendRequest() {
         val url =
-            "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20120101"
+            "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20210321"
 
         val request = object : StringRequest(
             Method.GET,
@@ -76,10 +70,6 @@ class VolleyActivity : AppCompatActivity() {
     }
 
 
-    private fun print(data: String) {
-        textView.append("$data\n").toString()
-    }
-
     private fun processResponse(response: String) {
         val gson = Gson()
         val movieList = gson.fromJson(response, MovieList::class.java)
@@ -89,5 +79,15 @@ class VolleyActivity : AppCompatActivity() {
             print("박스 오피스 타입 : ${movieList.boxOfficeResult.boxofficeType}")
             print("응답받은 영화 개수 : $countMovie")
         }
+    }
+
+    private fun sendImageRequest() {
+        val url = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTAxMjdfODYg%2FMDAxNjExNzMzNTkwNzE5.NXCulnOX98ypQd0sReYxFTX4w__NhMwXs2yMh_X4rRYg.wStQx6ZF8FaardIWYXygzV35l4QWPMiT3U192IB7r7sg.JPEG.lovevilbo%2F98f837ae15eb5f01629a9a6a4304302b.jpg&type=sc960_832"
+        val task = ImageLoadTask(url, movieImg)
+        task.execute()
+    }
+
+    private fun print(data: String) {
+        textView.append("$data\n").toString()
     }
 }

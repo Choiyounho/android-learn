@@ -22,23 +22,24 @@
         android:id="@+id/btn_img_load"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="27dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="159dp"
         android:text="이미지 가져오기"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/btn_read"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/img_movie"
-        android:layout_width="100dp"
+        android:layout_width="80dp"
         android:layout_height="50dp"
-        android:background="@color/black"
         android:layout_marginStart="31dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/btn_img_load"
         app:layout_constraintTop_toTopOf="parent" />
 
