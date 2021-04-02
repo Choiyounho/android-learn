@@ -66,6 +66,20 @@ class DbActivity : AppCompatActivity() {
             val tableName = editText2.text.toString()
             createTable(tableName)
         }
+
+        dbAddBtn.setOnClickListener {
+            val name = editText3.text.toString().trim()
+            val ageStr = editText4.text.toString().trim()
+            val number = editText5.text.toString().trim()
+
+            var age = -1
+            try {
+                age = ageStr.toInt()
+            } catch (e: Exception) {
+            }
+
+            insertData(name, age, number)
+        }
     }
 
     private fun openDatabase(databaseName: String) {
@@ -100,6 +114,22 @@ class DbActivity : AppCompatActivity() {
                 "create table $tableName (_id integer PRIMARY KEY autoincrement, name text, age integer, mobile text)"
             database.execSQL(sql)
             printing("테이블 생성 됨")
+        }
+    }
+
+    private fun insertData(name: String, age: Int, mobile: String) {
+        if (!database.isOpen) {
+            printing("데이터 베이스를 먼저 오픈해주세요요")
+        }
+
+        printing("insertData() 호출됨")
+
+        database.let {
+            val sql = "insert into customer(name, age, mobile) values(?, ?, ?)"
+            val params = arrayOf(name, age, mobile)
+
+            database.execSQL(sql, params)
+            printing("data 추가함")
         }
     }
 
