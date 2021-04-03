@@ -98,11 +98,9 @@ class DbActivity : AppCompatActivity() {
 
         printing("openDatabase() 호출")
 
-        database = openOrCreateDatabase(databaseName, MODE_PRIVATE, null)
+        val helper = DatabaseHelper(this, databaseName, null, 3)
 
-        database.let {
-            printing("데이터 베이스 오픈됨")
-        }
+        database = helper.writableDatabase
     }
 
     private fun createTable(tableName: String) {
@@ -183,6 +181,21 @@ class DbActivity : AppCompatActivity() {
         }
 
         override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+            printing("onUpgrade() 호출 됨 : $oldVersion, $newVersion")
+
+            if (newVersion > 1) {
+                val tableName = "customer"
+                db?.execSQL("drop table if exists $tableName")
+                printing("테이블 삭제함")
+
+
+                db.let {
+                    val sql =
+                        "create table $tableName (_id integer PRIMARY KEY autoincrement, name text, age integer, mobile text)"
+                    db?.execSQL(sql)
+                    printing("테이블 생성 됨")
+                }
+            }
         }
     }
 
