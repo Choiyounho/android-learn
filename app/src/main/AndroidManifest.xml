@@ -6,8 +6,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-feature android:name="android.hardware.camera" />
 
     <application
         android:name=".fastcampus.instagram.MasterApplication"
@@ -18,13 +21,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Learn"
         android:usesCleartextTraffic="true">
-        <activity android:name=".boostcourse.connect.ConnectActivity">
+        <activity android:name=".boostcourse.camera.CameraActivity2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".boostcourse.camera.CameraActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.soten.androidstudio.learn.boostcourse.camera"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity android:name=".boostcourse.connect.ConnectActivity" />
         <activity android:name=".boostcourse.db.DbActivity" />
         <activity android:name=".boostcourse.volley.VolleyActivity" />
 
