@@ -13,7 +13,7 @@ class CameraActivity2 : AppCompatActivity() {
         findViewById(R.id.imageView)
     }
 
-    lateinit var surfaceView: CameraSurfaceView
+    private lateinit var surfaceView: CameraSurfaceView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
