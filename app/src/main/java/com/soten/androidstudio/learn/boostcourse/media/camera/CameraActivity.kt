@@ -1,27 +1,17 @@
-package com.soten.androidstudio.learn.boostcourse.camera
+package com.soten.androidstudio.learn.boostcourse.media.camera
 
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.Environment
 import android.provider.MediaStore
-import android.util.Log
-import android.view.SurfaceView
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.FileProvider
 import com.soten.androidstudio.learn.R
-import java.io.File
-import java.io.IOException
-import java.text.SimpleDateFormat
-import java.util.*
 
 class CameraActivity : AppCompatActivity() {
 
@@ -78,7 +68,7 @@ class CameraActivity : AppCompatActivity() {
 //                photoFile?.also {
 //                    val photoURI: Uri = FileProvider.getUriForFile(
 //                        this,
-//                        "com.soten.androidstudio.learn.boostcourse.camera",
+//                        "com.soten.androidstudio.learn.boostcourse.media.camera",
 //                        it
 //                    )
 //                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)

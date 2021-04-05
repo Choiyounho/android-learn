@@ -1,4 +1,4 @@
-package com.soten.androidstudio.learn.boostcourse.camera
+package com.soten.androidstudio.learn.boostcourse.media.camera
 
 import android.graphics.BitmapFactory
 import android.os.Bundle

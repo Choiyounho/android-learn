@@ -1,4 +1,4 @@
-package com.soten.androidstudio.learn.player
+package com.soten.androidstudio.learn.boostcourse.media.player
 
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity

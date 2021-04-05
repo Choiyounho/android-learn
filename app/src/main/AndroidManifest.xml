@@ -21,21 +21,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Learn"
         android:usesCleartextTraffic="true">
-        <activity android:name=".player.RecorderActivity">
+        <activity android:name=".boostcourse.media.photo.PhotoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".player.VideoActivity" />
-        <activity android:name=".player.AudioActivity" />
-        <activity android:name=".boostcourse.camera.CameraActivity2" />
-        <activity android:name=".boostcourse.camera.CameraActivity" />
+        <activity android:name=".boostcourse.media.player.RecorderActivity" />
+        <activity android:name=".boostcourse.media.player.VideoActivity" />
+        <activity android:name=".boostcourse.media.player.AudioActivity" />
+        <activity android:name=".boostcourse.media.camera.CameraActivity2" />
+        <activity android:name=".boostcourse.media.camera.CameraActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.soten.androidstudio.learn.boostcourse.camera"
+            android:authorities="com.soten.androidstudio.learn.boostcourse.media.camera"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
