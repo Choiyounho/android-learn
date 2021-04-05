@@ -21,14 +21,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Learn"
         android:usesCleartextTraffic="true">
-        <activity android:name=".player.VideoActivity"></activity>
-        <activity android:name=".player.AudioActivity">
+        <activity android:name=".player.RecorderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".player.VideoActivity" />
+        <activity android:name=".player.AudioActivity" />
         <activity android:name=".boostcourse.camera.CameraActivity2" />
         <activity android:name=".boostcourse.camera.CameraActivity" />
 
