@@ -21,13 +21,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Learn"
         android:usesCleartextTraffic="true">
-        <activity android:name=".boostcourse.media.photo.PhotoActivity">
+        <activity android:name=".boostcourse.animation.TwinAnimationActivity"></activity>
+        <activity android:name=".boostcourse.animation.AnimationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".boostcourse.media.photo.PhotoActivity" />
         <activity android:name=".boostcourse.media.player.RecorderActivity" />
         <activity android:name=".boostcourse.media.player.VideoActivity" />
         <activity android:name=".boostcourse.media.player.AudioActivity" />
